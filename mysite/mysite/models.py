@@ -8,9 +8,9 @@ class Reporter(models.Model):
 
 class Article(models.Model):
     pub_date = models.DateField()
-    headline = models.CharField(max_length=200)
-    content = models.TextField()
+    content = models.TextField(max_length=33)
     reporter = models.ForeignKey(Reporter, on_delete=models.CASCADE)
+    poleabc = models.TextField(max_length=30)
 
     def __str__(self):
         return self.headline
